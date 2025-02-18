@@ -1,4 +1,4 @@
-### Gene essentiality and synthetic lethality using flux balance analysis (FBA)
+# Gene essentiality and synthetic lethality using flux balance analysis (FBA)
 
 ## Introduction
 In this analysis, we investigated the metabolic network of Escherichia coli using the COBRApy framework, focusing on essential genes and synthetic lethality. The primary aim is to understand how gene knockouts affect biomass production, a proxy for growth and survival.
@@ -9,7 +9,7 @@ We utilized the* E. coli* core metabolic model (e_coli_core), containing 72 meta
 Using the single_gene_deletion() function, we knocked genes out individually, and biomass production was measured. Genes whose deletion resulted in zero biomass were identified as essential genes. Non-essential genes were paired and tested for synthetic lethality using the double_gene_deletion() function. Then we classified gene pairs leading to zero biomass as synthetic lethal pairs.
 
 ## Results
-# Single-Gene Knockouts
+### Single-Gene Knockouts
 Single-gene knockouts resulted in the identification of the b1136 and b0720 genes (icd and gltA) which encode the enzyme isocitrate dehydrogenase (icd) (NADP-dependent) and Citrate Synthase (CS) respectfully. Isocitrate dehydrogenase enzyme catalyzes the ICDHyr reaction in the tricarboxylic acid (TCA) cycle. This enzyme facilitates the following reaction;
 
 icit_c + nadp_c <=> akg_c + co2_c + nadph_c
@@ -20,7 +20,7 @@ The b1136 gene is vital for maintaining energy production, NADPH supply, and pre
 
 While the b0720 gene that encode of the Citrate Synthase enzyme plays a central role in the citric acid production, which is crucial for energy produciton and biosynthesis in E.coli. When it is knocked out, the citric acid cycle is disrupted, leading to reduced ATP production, altered metabolism, and compromised biomass synthesis. As a result, E. coli biomass is significantly affected, leading to slower growth, reduced cell division, and a decrease in overall biomass accumulation.
 
-# Double-Gene Knockouts
+### Double-Gene Knockouts
 We identified 92 synthetic lethal pairs in the double-gene knockout analysis, where the simultaneous deletion of two non-essential genes resulted in zero biomass production. These pairs reveal critical redundancies and dependencies in E. coli's metabolic network.
 
 Our key findings include, but not limited to: Notable synthetic lethal pairs include b1849 (purT), which encodes formate-dependent glycinamide ribonucleotide (GAR) transformylase involved in purine biosynthesis (de novo), and b2926 (pgk), which encodes phosphoglycerate kinase, a key enzyme in glycolysis critical for energy production. The simultaneous knockout of these genes disrupts both nucleotide synthesis and energy metabolism, leading to complete growth failure. Also, the interaction between b2926 (pgk), encoding phosphoglycerate kinase in glycolysis, and b1276 (acnA), encoding aconitase A in the TCA cycle, highlights the critical balance between central metabolic pathways. Disruptions at these key nodes compromise energy production and metabolic flux, ultimately resulting in growth failure.
